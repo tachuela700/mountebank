@@ -1,0 +1,15 @@
+version: '3.7'
+networks:
+  autentia:
+    name: autentia
+    driver: bridge
+services:
+  autentia-it-mountebank:
+    image: mountebank_image:latest
+    ports:
+      - "80:80"
+      - "2525:2525"
+    volumes:
+      - "../mountebank:/mountebank/servers"
+    networks:
+      - autentia

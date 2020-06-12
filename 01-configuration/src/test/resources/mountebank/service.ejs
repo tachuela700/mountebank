@@ -1,0 +1,101 @@
+{
+  "port": 80,
+  "protocol": "http",
+  "name": "origin",
+  "defaultResponse": {
+    "statusCode": 400
+  },
+  "stubs": [
+    {
+      "predicates": [
+        {
+          "deepEquals": {
+            "method": "GET",
+            "path": "/courses",
+            "query": {
+              "page": 1,
+              "limit": 50
+            }
+          }
+        }
+      ],
+      "responses": [
+        {
+          "is": {
+            "statusCode" : 200,
+            "headers":{
+                "Content-Type":"application/json"
+            },
+            "body": [{
+              "id": "fb68d450-3038-4bd5-9854-9cfba4dc5fb5",
+              "name": "Ejb3 Timer Service: Scheduling",
+              "level": "INTERMEDIATE"
+            },
+            {
+              "id": "b2aa00b2-5fff-43c0-a9ca-172169b4fd5d",
+              "name": "Envío de correo electrónico con el soporte de Jboss Seam",
+              "level": "BASIC"
+            },
+            {
+              "id": "13b88aee-1412-4290-b9a0-d6ea4ba5ca0f",
+              "name": "Registro dinámico de beans en el contexto de Spring",
+              "level": "ADVANCED"
+            }]
+          }
+        }
+      ]
+    },
+    {
+      "predicates": [
+        {
+          "deepEquals": {
+            "method": "GET",
+            "path": "/courses",
+            "query": {
+              "page": 2,
+              "limit": 50
+            }
+          }
+        }
+      ],
+      "responses": [
+        {
+          "is": {
+            "statusCode" : 200,
+            "headers":{
+                "Content-Type":"application/json"
+            },
+            "body": [{
+              "id": "e646a1dc-61a8-4324-8fd4-58f84328be5d",
+              "name": "Integración de Spring con el envío de emails",
+              "level": "INTERMEDIATE"
+            },
+            {
+              "id": "f8d918da-7eb7-4423-8662-b8bf1ffdb2d5",
+              "name": "Spring Security: haciendo uso de un servidor LDAP embebido",
+              "level": "ADVANCED"
+            },
+            {
+              "id": "d355ef6e-1f12-4731-9ae7-64a863aca822",
+              "name": "Primeros pasos con github: subir un proyecto al repositorio.",
+              "level": "BASIC"
+            }]
+          }
+        }
+      ]
+    },
+    {
+      "responses": [
+        {
+          "is": {
+            "statusCode" : 200,
+            "headers":{
+                "Content-Type":"application/json"
+            },
+            "body": []
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+autentia:
+  boot:
+    resources:
+      filters:
+        courses: /filters/courses
+
+feign:
+  client:
+    config:
+      courses-client:
+        url: http://localhost:80
